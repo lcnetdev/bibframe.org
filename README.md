@@ -1,2 +1,2 @@
 # bibframe.org
-HMTL for www.bibframe.org
+HTML for http://www.bibframe.org
