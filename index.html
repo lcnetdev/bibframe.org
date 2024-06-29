@@ -1,0 +1,136 @@
+<!doctype html>
+<html class="no-js" lang="">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Bibliographic Framework Initiative Technical Site - Bibframe.org</title>
+  <link rel="stylesheet" href="css/style.css">
+  <meta name="description" content="">
+
+  <meta property="og:title" content="bibframe.org">
+
+  <meta property="og:url" content="bibframe.org">
+  <meta property="og:image" content="">
+  <meta property="og:image:alt" content="">
+
+  <link rel="icon" href="/static/favicon.ico" sizes="any">
+
+  <link rel="manifest" href="site.webmanifest">
+
+  <link rel="stylesheet"  href="https://cdn.jsdelivr.net/npm/bulma@1.0.1/css/bulma.min.css">
+
+  <style>
+    @media (prefers-color-scheme: dark) {
+      :root {
+        /* Update CSS variables */
+      }
+      .has-background-white-ter {
+        background-color: hsl(0, 0%, 21%) !important;
+      }
+    }
+
+    .logo-hero-container{
+      margin-top: 2em;
+      padding-top: 1em;
+      padding-bottom: 1em;
+    }
+    .logo-hero{
+      display:flex;
+
+    }
+    .logo{
+      flex-shrink:1;
+
+    }
+    .logo img{
+      width: 180px;
+      height: auto;
+    }
+    .title{
+      flex:1;
+    }
+
+    main{
+      padding-top: 2em;
+    }
+
+    h3{
+      margin-bottom: 0.5em !important;
+    }
+
+  </style>
+
+</head>
+
+<body>
+
+
+<nav class="has-background-white-ter logo-hero-container">
+  
+  <div class="container">
+    <section class="hero">  
+      <div class="logo-hero">
+        <div class="logo"><img src="static/bibframe.jpg"/></div>
+        <div class="title">
+          <div class="hero-body">
+            <p class="title">Bibframe.org</p>
+            <p class="subtitle">Demonstration of Bibframe 2 Tools</p>
+          </div>        
+
+        </div>
+      </div>
+    </section>
+  </div>
+
+</nav>
+
+
+<main class="container">
+
+
+  <h3 class="title is-3">Marva Editor</h3>
+  <div class="content">
+    <p>Marva is a Bibframe editor in development by the Library of Congress. This is a demonstration site for viewing the editor functionality. There are two versions online you can experiment with:</p>
+    <ul>
+      <li><p><a class="has-text-weight-semibold" href="/marva/quartz">Marva Quartz Version</a> -- This is a newer version of Marva that is under development (mid 2024). <a href="https://github.com/lcnetdev/marva-quartz">[source code]</a></p></li>
+      <li><p><a class="has-text-weight-semibold" href="/marva/editor">Marva Classic Version</a> -- This is an older version developed in 2020-2022. <a href="https://github.com/lcnetdev/marva-frontend">[source code]</a> </p></li>
+    </ul>
+  </div>
+
+  <h3 class="title is-3">Tools &amp; Resources</h3>
+  <div class="content">
+    <ul>
+      <li><p><a class="has-text-weight-semibold" href="https://github.com/lcnetdev/marc2bibframe2">marc2bibframe</a> -- XSLT-based conversion from MARC XML to Bibframe 2.</p></li>      
+      <li><p><a class="has-text-weight-semibold" href="https://github.com/lcnetdev/bibframe2marc">bibframe2marc</a> -- XSLT 1.0 conversion from RDF/XML Bibframe 2 to MARC XML.</p></li>      
+      <li><p><a class="has-text-weight-semibold" href="https://github.com/lcnetdev/bfe-profiles/tree/main/profile-prod">Bibframe Profiles</a> -- JSON application profiles used to structure the editing of Bibframe resources. </p></li>      
+      <li><p><a class="has-text-weight-semibold" href="https://github.com/lcnetdev/profile-edit">Profile Editor</a> -- A web-based application that can create and edit Bibframe profiles. </p></li>      
+      <li><p><a class="has-text-weight-semibold" href="https://id.loc.gov/ontologies/bibframe.html">Ontology</a> -- The Bibframe ontology with examples. <a href="https://github.com/lcnetdev/bibframe-ontology">[source code]</a></p></li>      
+
+
+
+
+    </ul>
+  </div>
+
+
+  <h3 class="title is-3">Scriptshifter</h3>
+  <div class="content">
+    <p>An automated tool developed by Library of Congress that can convert over ninety non-latin scripts into latin script following the LC/ALA guidelines.</p>
+    <ul>
+      <li><p><a class="has-text-weight-semibold" href="/scriptshifter/">Online Tool</a> -- A web interface using the library/tool.  <a href="https://github.com/lcnetdev/scriptshifter">[source code &amp; more info]</a></p></li>      
+    </ul>
+  </div>
+
+
+  
+
+
+
+</main>
+
+
+
+</body>
+
+</html>
