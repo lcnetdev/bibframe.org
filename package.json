@@ -1,0 +1,28 @@
+{
+  "name": "bibframe.org",
+  "version": "1.0.0",
+  "description": "HTML for http://www.bibframe.org",
+  "main": "index.js",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lcnetdev/bibframe.org.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/lcnetdev/bibframe.org/issues"
+  },
+  "homepage": "https://github.com/lcnetdev/bibframe.org#readme",
+  "devDependencies": {
+    "vite": "^7.1.5"
+  },
+  "dependencies": {
+    "crypto-js": "^4.2.0"
+  }
+}
