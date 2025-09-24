@@ -281,6 +281,25 @@ async function enrichContributorsWithWikidata(hits) {
   }
 }
 
+// Format instances results for numeric searches
+function formatInstances(data) {
+  if (!data.hits || data.hits.length === 0) {
+    return '<p class="has-text-grey">No instances found</p>';
+  }
+
+  return data.hits.map(hit => {
+    const uri = hit.uri;
+    const label = hit.aLabel || 'Unknown Instance';
+
+    return `
+      <div class="box p-3 mb-2 title-result" data-uri="${uri}" style="cursor: pointer;" onclick="handleInstanceClick('${uri}')">
+        <p class="has-text-weight-semibold">${label}</p>
+        ${hit.suggestLabel ? `<p class="is-size-7 has-text-grey">${hit.suggestLabel}</p>` : ''}
+      </div>
+    `;
+  }).join('');
+}
+
 // Format title results
 function formatTitles(data, searchQuery) {
   if (!data.hits || data.hits.length === 0) {
@@ -426,46 +445,64 @@ window.performSearches = async function performSearches(query) {
   }
   resultsDiv.innerHTML = '<div class="column"><p>Searching...</p></div>';
 
-  const namesUrl = `https://id.loc.gov/authorities/names/suggest2/?q=${encodeURIComponent(query)}*&searchtype=keyword&rdftype=PersonalName&usage=true&count=20`;
-  const worksUrl = `https://id.loc.gov/resources/works/suggest2/?q=${encodeURIComponent(query)}&searchtype=keyword&rdftype=Monograph&rdftype=Text&count=100`;
-
   try {
-    const [namesResponse, worksResponse] = await Promise.all([
-      fetch(namesUrl, { signal }),
-      fetch(worksUrl, { signal })
-    ]);
+    // Check if the search query is numeric only
+    const isNumericOnly = /^\d+$/.test(query.trim());
 
-    const [namesData, worksData] = await Promise.all([
-      namesResponse.json(),
-      worksResponse.json()
-    ]);
+    if (isNumericOnly) {
+      // For numeric-only searches, use the instances endpoint
+      const instancesUrl = `https://id.loc.gov/resources/instances/suggest2/?q=${encodeURIComponent(query)}&searchtype=keyword`;
 
-    // Format contributors (now async)
-    const contributorHTML = await formatContributors(namesData);
+      const response = await fetch(instancesUrl, { signal });
+      const instancesData = await response.json();
 
-    resultsDiv.innerHTML = `
-      <div class="column is-4">
-        <h4 class="title is-5 mb-3">Contributors - Click to Load</h4>
-        <div class="contributor-results">
-          ${contributorHTML}
+      // Format the instances results
+      resultsDiv.innerHTML = `
+        <div class="column">
+          <h4 class="title is-5 mb-3">Instance Search Results for "${query}"</h4>
+          <div class="instance-results">
+            ${formatInstances(instancesData)}
+          </div>
         </div>
-      </div>
-      <div class="column is-8">
-        <h4 class="title is-5 mb-3">Titles - results for "<i>${query}</i>"</h4>
-        <div class="title-results">
-          ${formatTitles(worksData, query)}
+      `;
+    } else {
+      // Regular search for non-numeric queries
+      const namesUrl = `https://id.loc.gov/authorities/names/suggest2/?q=${encodeURIComponent(query)}*&searchtype=keyword&rdftype=PersonalName&usage=true&count=20`;
+      const worksUrl = `https://id.loc.gov/resources/works/suggest2/?q=${encodeURIComponent(query)}&searchtype=keyword&rdftype=Monograph&rdftype=Text&count=100`;
+
+      const [namesResponse, worksResponse] = await Promise.all([
+        fetch(namesUrl, { signal }),
+        fetch(worksUrl, { signal })
+      ]);
+
+      const [namesData, worksData] = await Promise.all([
+        namesResponse.json(),
+        worksResponse.json()
+      ]);
+
+      // Format contributors (now async)
+      const contributorHTML = await formatContributors(namesData);
+
+      resultsDiv.innerHTML = `
+        <div class="column is-4">
+          <h4 class="title is-5 mb-3">Contributors - Click to Load</h4>
+          <div class="contributor-results">
+            ${contributorHTML}
+          </div>
         </div>
-      </div>
-    `;
+        <div class="column is-8">
+          <h4 class="title is-5 mb-3">Titles - results for "<i>${query}</i>"</h4>
+          <div class="title-results">
+            ${formatTitles(worksData, query)}
+          </div>
+        </div>
+      `;
+    }
   } catch (error) {
-    // Check if this was an abort error (user typed something new)
     if (error.name === 'AbortError') {
-      // Silently ignore abort errors - this is expected behavior
       console.log('Search cancelled due to new input');
       return;
     }
-
-    // Only show error for actual failures
     resultsDiv.innerHTML = `
       <div class="column">
         <div class="notification is-danger">
@@ -1455,7 +1492,7 @@ async function handleTitleClick(uri, clickedLabel) {
 
         // Determine how many pages to fetch (max 20)
         // totalPages indicates the highest page number, so we need to fetch pages 0 through totalPages inclusive
-        const maxPage = Math.min(firstPageData.summary.totalPages, 19); // Cap at page 19 (20 pages total)
+        const maxPage = Math.min(firstPageData.summary.totalPages, 29); // Cap at page 19 (30 pages total)
 
         // Create array of promises for all pages
         const pagePromises = [];
