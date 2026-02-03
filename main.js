@@ -1701,7 +1701,7 @@ async function handleInstanceClick(instanceUri) {
             <button class="button is-small is-light" id="back-button-instance">
               <span>${navigationContext.type === 'all-instances' ? '← Back to All Instances' : '← Back to Search'}</span>
             </button>
-            <button class="button is-primary" onclick="window.open('https://bibframe.org/marva/quartz/?action=load&url=https://id.loc.gov/resources/instances/${instanceId}.cbd.rdf&profile=lc:RT:bf2:Monograph:Instance', '_blank')">
+            <button class="button is-primary" onclick="window.open('https://bibframe.org/marva/?action=load&url=https://id.loc.gov/resources/instances/${instanceId}.cbd.rdf&profile=lc:RT:bf2:Monograph:Instance', '_blank')">
               Open in Marva Editor
             </button>
             <button class="button is-info" onclick="window.open('${workUri}', '_blank')">

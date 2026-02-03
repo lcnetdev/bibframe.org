@@ -1,0 +1,376 @@
+<html>
+  <head>
+     <title>Serial Instance Print DCTap</title>
+     <description>Bibframe Interoperability Group (BIG) DCTAP-to-SHACL</description>
+     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  </head>
+  <body class="container">
+    <h1>Serial Instance Print DCTap</h1> 
+    
+<table border="1" class="table table-bordered">
+  <thead>
+    <tr style="text-align: center;">
+      <th>shapeID</th>
+      <th>shapeLabel</th>
+      <th>target</th>
+      <th>propertyID</th>
+      <th>propertyLabel</th>
+      <th>valueShape</th>
+      <th>mandatory</th>
+      <th>severity</th>
+      <th>valueNodeType</th>
+      <th>repeatable</th>
+      <th>note</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>big:Serial:Instance:Print</td>
+      <td>Instance (Serial) Print</td>
+      <td>bf:Print</td>
+      <td>bf:instanceOf</td>
+      <td>Instance of</td>
+      <td>big:Serial:Work</td>
+      <td>True</td>
+      <td>Violation</td>
+      <td>IRI; bnode</td>
+      <td>True</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>big:Serial:Instance:Print</td>
+      <td>Instance (Serial) Print</td>
+      <td>bf:Print</td>
+      <td>bf:title</td>
+      <td>Instance Title</td>
+      <td>big:Title</td>
+      <td>True</td>
+      <td>Violation</td>
+      <td>IRI; bnode</td>
+      <td>True</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>big:Serial:Instance:Print</td>
+      <td>Instance (Serial) Print</td>
+      <td>bf:Print</td>
+      <td>bf:editionStatement</td>
+      <td>Edition Statement</td>
+      <td></td>
+      <td>True</td>
+      <td>Warning</td>
+      <td>literal</td>
+      <td>True</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>big:Serial:Instance:Print</td>
+      <td>Instance (Serial) Print</td>
+      <td>bf:Print</td>
+      <td>bf:provisionActivity</td>
+      <td>Provision Activity--Publication Information</td>
+      <td>big:ProvisionActivity</td>
+      <td>True</td>
+      <td>Violation</td>
+      <td>IRI; bnode</td>
+      <td>True</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>big:Serial:Instance:Print</td>
+      <td>Instance (Serial) Print</td>
+      <td>bf:Print</td>
+      <td>bf:firstIssue</td>
+      <td>Serial Numbering First Issue</td>
+      <td></td>
+      <td>True</td>
+      <td>Warning</td>
+      <td>literal</td>
+      <td>False</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>big:Serial:Instance:Print</td>
+      <td>Instance (Serial) Print</td>
+      <td>bf:Print</td>
+      <td>bf:frequency</td>
+      <td>Frequency</td>
+      <td>big:FrequencyShape</td>
+      <td>True</td>
+      <td>Warning</td>
+      <td>IRI; bnode</td>
+      <td>True</td>
+      <td>bf:frequency may appear on its own or included within bf:pubFrequency, below</td>
+    </tr>
+    <tr>
+      <td>big:Serial:Instance:Print</td>
+      <td>Instance (Serial) Print</td>
+      <td>bf:Print</td>
+      <td>bf:pubFrequency</td>
+      <td>Publication Frequency</td>
+      <td>big:PubFrequencyShape</td>
+      <td>True</td>
+      <td>Warning</td>
+      <td>IRI; bnode</td>
+      <td>True</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>big:Serial:Instance:Print</td>
+      <td>Instance (Serial) Print</td>
+      <td>bf:Print</td>
+      <td>bf:seriesStatement</td>
+      <td>Series Statement</td>
+      <td></td>
+      <td>True</td>
+      <td>Warning</td>
+      <td>literal</td>
+      <td>True</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>big:Serial:Instance:Print</td>
+      <td>Instance (Serial) Print</td>
+      <td>bf:Print</td>
+      <td>bf:identifiedBy</td>
+      <td>Identifiers</td>
+      <td>big:SerialIdentifier</td>
+      <td>True</td>
+      <td>Warning</td>
+      <td>IRI; bnode</td>
+      <td>True</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>big:Serial:Instance:Print</td>
+      <td>Instance (Serial) Print</td>
+      <td>bf:Print</td>
+      <td>bf:issuance</td>
+      <td>Mode of Issuance</td>
+      <td></td>
+      <td>True</td>
+      <td>Violation</td>
+      <td>IRI; bnode</td>
+      <td>False</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>big:Serial:Instance:Print</td>
+      <td>Instance (Serial) Print</td>
+      <td>bf:Print</td>
+      <td>bf:media</td>
+      <td>Media type</td>
+      <td></td>
+      <td>True</td>
+      <td>Violation</td>
+      <td>IRI; bnode</td>
+      <td>True</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>big:Serial:Instance:Print</td>
+      <td>Instance (Serial) Print</td>
+      <td>bf:Print</td>
+      <td>bf:carrier</td>
+      <td>Carrier type</td>
+      <td></td>
+      <td>True</td>
+      <td>Violation</td>
+      <td>IRI; bnode</td>
+      <td>True</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>big:Serial:Instance:Print</td>
+      <td>Instance (Serial) Print</td>
+      <td>bf:Print</td>
+      <td>bf:pubfrequency</td>
+      <td>Publication frequency</td>
+      <td>big:PubFrequency</td>
+      <td>True</td>
+      <td>Warning</td>
+      <td>IRI, bnode</td>
+      <td>True</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>big:Serial:Instance:Print</td>
+      <td>Instance (Serial) Print</td>
+      <td>bf:Print</td>
+      <td>bf:adminMetadata</td>
+      <td>Administrative metadata</td>
+      <td>big:AdminMetadata</td>
+      <td>True</td>
+      <td>Violation</td>
+      <td>IRI; bnode</td>
+      <td>True</td>
+      <td>*adminMetadata should be at the Work and Instance levels but the requirements are the same for both</td>
+    </tr>
+    <tr>
+      <td>big:Title</td>
+      <td>Title</td>
+      <td>bf:Title</td>
+      <td>bf:mainTitle</td>
+      <td>Main Title</td>
+      <td></td>
+      <td>True</td>
+      <td>Violation</td>
+      <td>literal</td>
+      <td>False</td>
+      <td>Move to Title Sheet and add other title types</td>
+    </tr>
+    <tr>
+      <td>big:ProvisionActivity</td>
+      <td>Provision Activity</td>
+      <td>bf:ProvisionActivity; bf:Distribution; bf:Manufacture; bf:Production; bf:Publication; bf:Modification</td>
+      <td>bf:agent</td>
+      <td>Agent</td>
+      <td>big:Agent</td>
+      <td>True</td>
+      <td>Warning</td>
+      <td>IRI; bnode</td>
+      <td>True</td>
+      <td>prefer use of bf:agent in Provision Activity but if no bf:agent exists, then use bflc:simpleAgent (below)</td>
+    </tr>
+    <tr>
+      <td>big:Agent</td>
+      <td></td>
+      <td>bf:Agent ; bf:Person ; bf:Family ; bf:Organization ; bf:Jurisdiction ; bf:Meeting</td>
+      <td>rdfs:label</td>
+      <td>Agent Label</td>
+      <td></td>
+      <td>True</td>
+      <td>Warning</td>
+      <td>literal</td>
+      <td>True</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>big:ProvisionActivity</td>
+      <td>Provision Activity</td>
+      <td>bf:ProvisionActivity; bf:Distribution; bf:Manufacture; bf:Production; bf:Publication; bf:Modification</td>
+      <td>bflc:simpleAgent</td>
+      <td>Agent Simple Label</td>
+      <td></td>
+      <td>True</td>
+      <td>Warning</td>
+      <td>literal</td>
+      <td>True</td>
+      <td>prefer use of bf:agent (above) in Provision Activity but if no bf:agent exists, then use bflc:simpleAgent</td>
+    </tr>
+    <tr>
+      <td>big:ProvisionActivity</td>
+      <td>Provision Activity</td>
+      <td>bf:ProvisionActivity; bf:Distribution; bf:Manufacture; bf:Production; bf:Publication; bf:Modification</td>
+      <td>bf:date</td>
+      <td>Date</td>
+      <td></td>
+      <td>True</td>
+      <td>Warning</td>
+      <td>literal</td>
+      <td>True</td>
+      <td>Pull both types of dates if they exist as the formatting may differ</td>
+    </tr>
+    <tr>
+      <td>big:ProvisionActivity</td>
+      <td>Provision Activity</td>
+      <td>bf:ProvisionActivity; bf:Distribution; bf:Manufacture; bf:Production; bf:Publication; bf:Modification</td>
+      <td>bflc:simpleDate</td>
+      <td>Simple Date</td>
+      <td></td>
+      <td>True</td>
+      <td>Warning</td>
+      <td>literal</td>
+      <td>True</td>
+      <td>Pull both types of dates if they exist as the formatting may differ</td>
+    </tr>
+    <tr>
+      <td>big:ProvisionActivity</td>
+      <td>Provision Activity</td>
+      <td>bf:ProvisionActivity; bf:Distribution; bf:Manufacture; bf:Production; bf:Publication; bf:Modification</td>
+      <td>bf:place</td>
+      <td>Place</td>
+      <td>big:Place</td>
+      <td>True</td>
+      <td>Warning</td>
+      <td>IRI; bnode</td>
+      <td>True</td>
+      <td>Pull both bf:place and bf:simplePlace LC uses bf:place to indicate the country of publication</td>
+    </tr>
+    <tr>
+      <td>big:Place</td>
+      <td></td>
+      <td>bf:Place</td>
+      <td>rdfs:label</td>
+      <td>Place Label</td>
+      <td></td>
+      <td>True</td>
+      <td>Warning</td>
+      <td>lteral</td>
+      <td>True</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>big:ProvisionActivity</td>
+      <td>Provision Activity</td>
+      <td>bf:ProvisionActivity; bf:Distribution; bf:Manufacture; bf:Production; bf:Publication; bf:Modification</td>
+      <td>bflc:simplePlace</td>
+      <td>Place Simple Label</td>
+      <td></td>
+      <td>True</td>
+      <td>Warning</td>
+      <td>literal</td>
+      <td>True</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>big:SerialIdentifier</td>
+      <td>Identifier</td>
+      <td>bf:Issn ; bf:IssnL</td>
+      <td>rdf:value</td>
+      <td>Serial Identifier</td>
+      <td></td>
+      <td>True</td>
+      <td>Warning</td>
+      <td>literal</td>
+      <td>True</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>big:FrequencyShape</td>
+      <td>Frequency</td>
+      <td>bf:Frequency</td>
+      <td>rdfs:label</td>
+      <td>Frequency</td>
+      <td></td>
+      <td>True</td>
+      <td>Warning</td>
+      <td>literal</td>
+      <td>True</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>big:PubFrequencyShape</td>
+      <td>Frequency</td>
+      <td>bf:PubFrequency</td>
+      <td>bf:frequency</td>
+      <td>Publication Frequency</td>
+      <td></td>
+      <td>True</td>
+      <td>Warning</td>
+      <td>IRI; bnode</td>
+      <td>True</td>
+      <td></td>
+    </tr>
+  </tbody>
+</table>
+
+    <footer>
+    <hr width="100%" size="2">
+     Last Updated: 2025-05-02 <br>
+     Github Repository <a href="https://github.com/bf-interop/DCTap/">https://github.com/bf-interop/DCTap/</a><br>
+     Contact: <a href="mailto:bf-interop@googlegroups.com">Send email</a><br>
+     Disclaimer: BIG outputs are not official Library of Congress specifications.
+    </footer>
+  </body>
+</html>
