@@ -1708,7 +1708,7 @@ async function handleInstanceClick(instanceUri) {
               View on id.loc.gov
             </button>
           </div>
-          <div style="margin-top:2em;"><a href="https://www.loc.gov/catworkshop/bibframe/Library-of-Congress-Marva-Quartz-User-Manual.pdf" target="_blank">View Marva Manual</a></div>
+          <div style="margin-top:2em;"><a href="https://bibframe.org/docs/view/documentation-marva-manual/index.md" target="_blank">View Marva Manual</a></div>
         </div>
       </div>
     `;
