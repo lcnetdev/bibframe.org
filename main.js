@@ -16,7 +16,7 @@ function debounce(func, wait) {
 }
 
 // Convert Wikimedia image URL to thumbnail
-function convertToThumbnail(imageUrl, width = 80) {
+function convertToThumbnail(imageUrl, width = 120) {
   // Convert full Wikimedia Commons URLs to thumbnail URLs using MD5 hashing
   if (!imageUrl || !imageUrl.includes('commons.wikimedia.org')) {
     return imageUrl;
@@ -250,7 +250,7 @@ async function enrichContributorsWithWikidata(hits) {
         if (image && lccn) {
           const imageContainer = document.querySelector(`.contributor-box[data-token="${lccn}"] .contributor-image`);
           if (imageContainer) {
-            const thumbnailUrl = convertToThumbnail(image, 80);
+            const thumbnailUrl = convertToThumbnail(image, 120);
             const contributorBox = document.querySelector(`.contributor-box[data-token="${lccn}"]`);
             const displayName = contributorBox ? contributorBox.dataset.label : '';
             imageContainer.innerHTML = `
